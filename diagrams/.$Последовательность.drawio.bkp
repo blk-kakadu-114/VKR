@@ -1,0 +1,121 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.17 Chrome/128.0.6613.36 Electron/32.0.1 Safari/537.36" version="24.7.17">
+  <diagram name="Страница — 1" id="WMLHR8_eikk8-gmmr01T">
+    <mxGraphModel dx="1124" dy="868" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="1yvvPG2KULLi0O_kODMs-4" value="Загрузка данных" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="176" y="-78" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="1yvvPG2KULLi0O_kODMs-5" value="" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};participant=umlActor;" vertex="1" parent="1">
+          <mxGeometry x="-44" y="10" width="20" height="376" as="geometry" />
+        </mxCell>
+        <mxCell id="1yvvPG2KULLi0O_kODMs-6" value="" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};participant=umlControl;" vertex="1" parent="1">
+          <mxGeometry x="103" y="10" width="40" height="368" as="geometry" />
+        </mxCell>
+        <mxCell id="1yvvPG2KULLi0O_kODMs-10" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1yvvPG2KULLi0O_kODMs-6">
+          <mxGeometry x="15" y="59" width="10" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="1yvvPG2KULLi0O_kODMs-13" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1yvvPG2KULLi0O_kODMs-6">
+          <mxGeometry x="15" y="124" width="10" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="1yvvPG2KULLi0O_kODMs-33" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1yvvPG2KULLi0O_kODMs-6">
+          <mxGeometry x="15" y="254" width="10" height="23" as="geometry" />
+        </mxCell>
+        <mxCell id="1yvvPG2KULLi0O_kODMs-7" value="" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};participant=umlEntity;" vertex="1" parent="1">
+          <mxGeometry x="256" y="10" width="40" height="365" as="geometry" />
+        </mxCell>
+        <mxCell id="1yvvPG2KULLi0O_kODMs-15" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1yvvPG2KULLi0O_kODMs-7">
+          <mxGeometry x="15" y="148" width="10" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="1yvvPG2KULLi0O_kODMs-29" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1yvvPG2KULLi0O_kODMs-7">
+          <mxGeometry x="15" y="233" width="10" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="1yvvPG2KULLi0O_kODMs-36" value="show_table()" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;fontSize=12;startSize=8;endSize=8;exitX=1;exitY=1;exitDx=0;exitDy=-5;exitPerimeter=0;entryX=1;entryY=0;entryDx=0;entryDy=5;entryPerimeter=0;" edge="1" parent="1yvvPG2KULLi0O_kODMs-7" source="1yvvPG2KULLi0O_kODMs-15" target="1yvvPG2KULLi0O_kODMs-29">
+          <mxGeometry x="0.2688" y="38" width="80" relative="1" as="geometry">
+            <mxPoint x="53" y="229" as="sourcePoint" />
+            <mxPoint x="133" y="229" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="57" y="209" />
+              <mxPoint x="57" y="238" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1yvvPG2KULLi0O_kODMs-9" value="" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};participant=umlEntity;" vertex="1" parent="1">
+          <mxGeometry x="422" y="10" width="40" height="417" as="geometry" />
+        </mxCell>
+        <mxCell id="1yvvPG2KULLi0O_kODMs-22" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1yvvPG2KULLi0O_kODMs-9">
+          <mxGeometry x="15" y="198" width="10" height="9" as="geometry" />
+        </mxCell>
+        <mxCell id="1yvvPG2KULLi0O_kODMs-11" value="Запуск ИС" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;entryX=0;entryY=0;entryDx=0;entryDy=5;fontSize=12;startSize=8;endSize=8;" edge="1" target="1yvvPG2KULLi0O_kODMs-10" parent="1" source="1yvvPG2KULLi0O_kODMs-5">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="48" y="74" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1yvvPG2KULLi0O_kODMs-12" value="Вывод интерфейса" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;exitX=0;exitY=1;exitDx=0;exitDy=-5;fontSize=12;" edge="1" source="1yvvPG2KULLi0O_kODMs-10" parent="1" target="1yvvPG2KULLi0O_kODMs-5">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="48" y="144" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1yvvPG2KULLi0O_kODMs-14" value="Загрузить файл" style="html=1;verticalAlign=bottom;startArrow=none;endArrow=block;startSize=8;curved=0;rounded=0;entryX=0;entryY=0;entryDx=0;entryDy=5;fontSize=12;startFill=0;" edge="1" target="1yvvPG2KULLi0O_kODMs-13" parent="1" source="1yvvPG2KULLi0O_kODMs-5">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="48" y="172" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1yvvPG2KULLi0O_kODMs-16" value="open_file()" style="html=1;verticalAlign=bottom;startArrow=none;endArrow=block;startSize=8;curved=0;rounded=0;entryX=0;entryY=0;entryDx=0;entryDy=5;fontSize=12;exitX=1;exitY=1;exitDx=0;exitDy=-5;exitPerimeter=0;startFill=0;" edge="1" target="1yvvPG2KULLi0O_kODMs-15" parent="1" source="1yvvPG2KULLi0O_kODMs-13">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="201" y="163" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1yvvPG2KULLi0O_kODMs-18" value="Пользователь" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="-64" y="-27" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="1yvvPG2KULLi0O_kODMs-19" value="Интерфейс Tkinter" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="93" y="-27" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="1yvvPG2KULLi0O_kODMs-20" value="Функции ИС" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="246" y="-27" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="1yvvPG2KULLi0O_kODMs-21" value="Переменная хранения" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="412" y="-27" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="1yvvPG2KULLi0O_kODMs-23" value="Чтение файла" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;entryX=0;entryY=1;entryDx=0;entryDy=-5;fontSize=12;startSize=8;endSize=8;entryPerimeter=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-33.89999999999998" y="198" as="sourcePoint" />
+            <mxPoint x="271" y="198" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1yvvPG2KULLi0O_kODMs-32" value="Загрузка таблицы" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;fontSize=12;entryX=1;entryY=0;entryDx=0;entryDy=5;entryPerimeter=0;" edge="1" parent="1" source="1yvvPG2KULLi0O_kODMs-29" target="1yvvPG2KULLi0O_kODMs-33">
+          <mxGeometry x="0.0031" relative="1" as="geometry">
+            <mxPoint x="382" y="260" as="sourcePoint" />
+            <mxPoint x="160" y="269" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1yvvPG2KULLi0O_kODMs-34" value="" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;fontSize=12;" edge="1" parent="1" target="1yvvPG2KULLi0O_kODMs-5">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="118" y="282" as="sourcePoint" />
+            <mxPoint x="38" y="282" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1yvvPG2KULLi0O_kODMs-35" value="Вывод таблицы" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="-4" y="257" width="111" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="1yvvPG2KULLi0O_kODMs-37" value="Выбор файла" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;fontSize=12;exitX=0.02;exitY=0.233;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="1yvvPG2KULLi0O_kODMs-15" target="1yvvPG2KULLi0O_kODMs-5">
+          <mxGeometry x="0.3696" relative="1" as="geometry">
+            <mxPoint x="255" y="183" as="sourcePoint" />
+            <mxPoint x="181" y="193" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1yvvPG2KULLi0O_kODMs-39" value="Создание переменной" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" target="1yvvPG2KULLi0O_kODMs-22">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="281" y="212" as="sourcePoint" />
+            <mxPoint x="361" y="212" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

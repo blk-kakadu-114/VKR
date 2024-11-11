@@ -1,0 +1,58 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.17 Chrome/128.0.6613.36 Electron/32.0.1 Safari/537.36" version="24.7.17">
+  <diagram name="Страница — 1" id="qqu_GYdNVNpswe7JAIOm">
+    <mxGraphModel dx="2234" dy="1294" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="j9aFZY9n9ac9VVj8rJNR-1" value="«Interface»&lt;br&gt;&lt;b&gt;Приложение Tkinter&lt;/b&gt;" style="html=1;dropTarget=0;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="-401" y="115" width="180" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="j9aFZY9n9ac9VVj8rJNR-2" value="" style="shape=module;jettyWidth=8;jettyHeight=4;" vertex="1" parent="j9aFZY9n9ac9VVj8rJNR-1">
+          <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+            <mxPoint x="-27" y="7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="j9aFZY9n9ac9VVj8rJNR-4" value="«Interface»&lt;br&gt;&lt;b&gt;Notebook&lt;/b&gt;" style="html=1;dropTarget=0;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="-78" y="115" width="180" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="j9aFZY9n9ac9VVj8rJNR-5" value="" style="shape=module;jettyWidth=8;jettyHeight=4;" vertex="1" parent="j9aFZY9n9ac9VVj8rJNR-4">
+          <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+            <mxPoint x="-27" y="7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="j9aFZY9n9ac9VVj8rJNR-6" value="«Interface»&lt;br&gt;&lt;b&gt;Таблица&lt;/b&gt;" style="html=1;dropTarget=0;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="245" y="-122" width="180" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="j9aFZY9n9ac9VVj8rJNR-7" value="" style="shape=module;jettyWidth=8;jettyHeight=4;" vertex="1" parent="j9aFZY9n9ac9VVj8rJNR-6">
+          <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+            <mxPoint x="-27" y="7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="j9aFZY9n9ac9VVj8rJNR-10" value="«Interface»&lt;br&gt;&lt;b&gt;Диаграмма&lt;/b&gt;" style="html=1;dropTarget=0;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="245" y="34" width="180" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="j9aFZY9n9ac9VVj8rJNR-11" value="" style="shape=module;jettyWidth=8;jettyHeight=4;" vertex="1" parent="j9aFZY9n9ac9VVj8rJNR-10">
+          <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+            <mxPoint x="-27" y="7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="j9aFZY9n9ac9VVj8rJNR-12" value="«Interface»&lt;br&gt;&lt;b&gt;Обучение&lt;/b&gt;" style="html=1;dropTarget=0;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="245" y="190" width="180" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="j9aFZY9n9ac9VVj8rJNR-13" value="" style="shape=module;jettyWidth=8;jettyHeight=4;" vertex="1" parent="j9aFZY9n9ac9VVj8rJNR-12">
+          <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+            <mxPoint x="-27" y="7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="j9aFZY9n9ac9VVj8rJNR-14" value="«Interface»&lt;br&gt;&lt;b&gt;Сбор&lt;/b&gt;" style="html=1;dropTarget=0;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="245" y="346" width="180" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="j9aFZY9n9ac9VVj8rJNR-15" value="" style="shape=module;jettyWidth=8;jettyHeight=4;" vertex="1" parent="j9aFZY9n9ac9VVj8rJNR-14">
+          <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+            <mxPoint x="-27" y="7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
