@@ -42,6 +42,7 @@ def switch_toolbar(event):
         btn_open_script.pack(side ="left", padx = 5, pady = 5)
         btn_run_script.pack(side ="left", padx = 5, pady = 5)
         btn_save_script.pack(side = 'left', padx = 5, pady=5)
+        btn_save_as.pack(side ="left", padx = 5, pady = 5)
         btn_help_ml.pack(side = "left", padx = 5, pady = 5)
 
 # функция открытия файла через окно
@@ -496,41 +497,73 @@ print(f'Accuracy: {accuracy}')
     # Вставляем базовый код в редактор
     code_editor.insert(tk.INSERT, base_code)
 
+# Переменная для хранения пути к текущему открытому файлу
+current_file_path = None
+
+
+
 # Функция для загрузки скрипта в текстовый редактор
 def load_code():
+    global current_file_path
     # Открываем диалоговое окно для выбора файла
-    file_path = filedialog.askopenfilename(filetypes=[("Python files", "*.py")])
-    if file_path:
+    current_file_path = filedialog.askopenfilename(filetypes=[("Python files", "*.py")])
+    if current_file_path:
         # Читаем файл и загружаем содержимое в текстовый редактор
-        with open(file_path, 'r') as file:
+        with open(current_file_path, 'r', encoding = 'utf-8') as file:
             code = file.read()
             code_editor.delete(1.0, tk.END)  # Очистить текстовый редактор
             code_editor.insert(tk.END, code)  # Загрузить код в редактор
 
+
+
 # Функция для выполнения кода из редактора
 def run_code():
-    # Сохраняем содержимое редактора во временный файл
-    temp_file_path = filedialog.asksaveasfilename(defaultextension=".py", filetypes=[("Python files", "*.py")])
-    if temp_file_path:
-        with open(temp_file_path, 'w') as file:
+    global current_file_path
+
+    if current_file_path:  # Если файл уже сохранен
+        with open(current_file_path, 'w', encoding='utf-8') as file:
+            file.write(code_editor.get(1.0, tk.END))
+    else:  # Если файл новый, запрашиваем место для сохранения
+        current_file_path = filedialog.asksaveasfilename(defaultextension=".py", filetypes=[("Python files", "*.py")])
+        if not current_file_path:  # Если пользователь отменил сохранение
+            print("Сохранение отменено. Код не запущен.")
+            return
+        with open(current_file_path, 'w', encoding='utf-8') as file:
             file.write(code_editor.get(1.0, tk.END))
 
-        # Запускаем скрипт через subprocess и выводим результат в консоль
-        process = subprocess.Popen(['python', temp_file_path], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
-        stdout, stderr = process.communicate()
+    # Запускаем скрипт через subprocess и выводим результат в консоль
+    process = subprocess.Popen(['python', current_file_path], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+    stdout, stderr = process.communicate()
 
-        if stdout:
-            print(f"Output:\n{stdout}")
-        if stderr:
-            print(f"Errors:\n{stderr}")
+    if stdout:
+        print(f"Output:\n{stdout}")
+    if stderr:
+        print(f"Errors:\n{stderr}")
 
-# Кнопка сохранения кода
+# Функция для сохранения кода
 def save_code():
+    global current_file_path
+
+    if current_file_path:  # Если файл уже существует
+        with open(current_file_path, 'w', encoding='utf-8') as file:
+            file.write(code_editor.get(1.0, tk.END))
+        print(f"Файл сохранен: {current_file_path}")
+    else:  # Если файл новый, запрашиваем место для сохранения
+        current_file_path = filedialog.asksaveasfilename(defaultextension=".py", filetypes=[("Python files", "*.py")])
+        if current_file_path:  # Если пользователь выбрал место для сохранения
+            with open(current_file_path, 'w', encoding='utf-8') as file:
+                file.write(code_editor.get(1.0, tk.END))
+            print(f"Файл сохранен: {current_file_path}")
+        else:
+            print("Сохранение отменено.")
+        
+def save_as():
+    global current_file_path
     # Открываем диалог для сохранения файла
-    file_path = filedialog.asksaveasfilename(defaultextension=".py", filetypes=[("Python files", "*.py")])
-    if file_path:
+    current_file_path = filedialog.asksaveasfilename(defaultextension=".py", filetypes=[("Python files", "*.py")])
+    if current_file_path:
         # Сохраняем содержимое редактора в выбранный файл
-        with open(file_path, 'w') as file:
+        with open(current_file_path, 'w', encoding = 'utf-8') as file:
             file.write(code_editor.get(1.0, tk.END))
 
 # Функция для отображения содержимого выбранного файла
@@ -625,7 +658,8 @@ btn_save_chart = ctk.CTkButton(add_toolbar, text = 'Сохранить', command
 btn_new_model = ctk.CTkButton(add_toolbar, text = 'Шаблон', command = open_ml_editor)
 btn_open_script = ctk.CTkButton(add_toolbar, text = 'Загрузить', command = load_code)
 btn_run_script = ctk.CTkButton(add_toolbar, text = 'Запуск', command = run_code)
-btn_save_script = ctk.CTkButton(add_toolbar, text = "Сохранить скрипт", command = save_code)
+btn_save_script = ctk.CTkButton(add_toolbar, text = "Сохранить", command = save_code)
+btn_save_as = ctk.CTkButton(add_toolbar, text = 'Сохранить как', command = save_as)
 btn_help_ml = ctk.CTkButton(add_toolbar, text = 'Помощь', command = open_ml_info_window)
 
 
