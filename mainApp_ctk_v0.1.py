@@ -500,21 +500,18 @@ print(f'Accuracy: {accuracy}')
 # Переменная для хранения пути к текущему открытому файлу
 current_file_path = None
 
-
-
 # Функция для загрузки скрипта в текстовый редактор
 def load_code():
     global current_file_path
     # Открываем диалоговое окно для выбора файла
     current_file_path = filedialog.askopenfilename(filetypes=[("Python files", "*.py")])
+    
     if current_file_path:
         # Читаем файл и загружаем содержимое в текстовый редактор
         with open(current_file_path, 'r', encoding = 'utf-8') as file:
             code = file.read()
             code_editor.delete(1.0, tk.END)  # Очистить текстовый редактор
             code_editor.insert(tk.END, code)  # Загрузить код в редактор
-
-
 
 # Функция для выполнения кода из редактора
 def run_code():
@@ -523,6 +520,7 @@ def run_code():
     if current_file_path:  # Если файл уже сохранен
         with open(current_file_path, 'w', encoding='utf-8') as file:
             file.write(code_editor.get(1.0, tk.END))
+
     else:  # Если файл новый, запрашиваем место для сохранения
         current_file_path = filedialog.asksaveasfilename(defaultextension=".py", filetypes=[("Python files", "*.py")])
         if not current_file_path:  # Если пользователь отменил сохранение
@@ -548,6 +546,7 @@ def save_code():
         with open(current_file_path, 'w', encoding='utf-8') as file:
             file.write(code_editor.get(1.0, tk.END))
         print(f"Файл сохранен: {current_file_path}")
+
     else:  # Если файл новый, запрашиваем место для сохранения
         current_file_path = filedialog.asksaveasfilename(defaultextension=".py", filetypes=[("Python files", "*.py")])
         if current_file_path:  # Если пользователь выбрал место для сохранения
