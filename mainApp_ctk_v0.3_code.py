@@ -13,13 +13,21 @@ import subprocess
 from scipy import stats
 import numpy as np
 from statsmodels.stats.stattools import jarque_bera
+from pygments import highlight
+from pygments.lexers.agile import PythonLexer
+from pygments.formatters import HtmlFormatter
+
 
 # ГЛОБАЛЬНЫЕ ПЕРЕМЕННЫЕ =========================================================================================================
 pd.set_option('display.max_rows', None)
 
 current_file = None
-current_data = None
 current_file_path = None
+current_data = None  # Инициализация текущих данных
+headers = []  # Заголовки столбцов, которые вы должны заполнить
+column_vars = []  # Переменные для хранения выборов столбцов
+chart_type_var = None  # Переменная для выбора типа диаграммы
+ax = None  # Ось для построения графиков
 
 # ФУНКЦИИ ========================================================================================================================
 
@@ -388,12 +396,11 @@ def show_chart():
     if current_data is not None:
         update_chart()
 
-# Функция для отображения и обновления диаграммы на основе выбранных столбцов
 def update_chart():
     selected_columns = [var.get() for var in column_vars if var.get() in headers]
     
     if selected_columns:
-        updated_data = pd.DataFrame(sheet, columns=headers)
+        updated_data = pd.DataFrame(current_data, columns=headers)
         ax.clear()
         updated_data[selected_columns].plot(ax=ax)
         canvas.draw()
@@ -401,21 +408,67 @@ def update_chart():
 # Вкладка "Диаграмма"
 def update_chart_panel():
     global column_vars
-    global chart_type, title, x_col, y_col, hue
     
     if current_data is None:
         return
     
     for widget in visual_frame.winfo_children():
         widget.destroy()
-    
-     # Создаем область для чекбоксов с прокруткой
+
+    # Создаем область для чекбоксов с прокруткой
     column_listbox_frame = ctk.CTkFrame(visual_frame)
     column_listbox_frame.pack(side='left', fill='y', padx=5, pady=5)
     
-    chart_settings = ctk.CTkButton(column_listbox_frame, text='Настроить')
-    chart_settings.pack(side='top', fill='y', padx=5, pady=5)
-    
+    def open_settings_window():
+        # Создаем окно настроек
+        settings_window = ctk.CTkToplevel(root)
+        settings_window.title("Настройки диаграммы")
+
+        # Тип диаграммы
+        ttk.Label(settings_window, text="Тип диаграммы").pack(pady=5)
+        chart_type = tk.StringVar(value="line")
+        ttk.Radiobutton(settings_window, text="Линия", variable=chart_type, value="line").pack(anchor=tk.W)
+        ttk.Radiobutton(settings_window, text="Столбец", variable=chart_type, value="bar").pack(anchor=tk.W)
+
+        # Заголовок
+        ttk.Label(settings_window, text="Заголовок").pack(pady=5)
+        title_var = tk.StringVar(value="Диаграмма")
+        ttk.Entry(settings_window, textvariable=title_var).pack()
+
+        # Стиль линий и цвет
+        ttk.Label(settings_window, text="Стиль линии").pack(pady=5)
+        line_style = tk.StringVar(value='-')
+        ttk.Combobox(settings_window, textvariable=line_style, values=["-", "--", "-.", ":"]).pack()
+
+        ttk.Label(settings_window, text="Цвет линии").pack(pady=5)
+        line_color = tk.StringVar(value='blue')
+        ttk.Entry(settings_window, textvariable=line_color).pack()
+
+        # Размер шрифта
+        ttk.Label(settings_window, text="Размер шрифта заголовка").pack(pady=5)
+        font_size = tk.IntVar(value=16)
+        font_size_spinbox = ttk.Spinbox(settings_window, from_=8, to=30, textvariable=font_size)
+        font_size_spinbox.pack()
+
+        def apply_settings():
+            ax.clear()
+            selected_columns = [var.get() for var in column_vars if var.get() in headers]
+            if selected_columns:
+                if chart_type.get() == "bar":
+                    current_data[selected_columns].plot(kind='bar', ax=ax, color=line_color.get())
+                else:
+                    current_data[selected_columns].plot(ax=ax, linestyle=line_style.get(), color=line_color.get())
+
+                ax.set_title(title_var.get() if title_var.get() else "Диаграмма", fontsize=font_size.get())
+                canvas.draw()
+            settings_window.destroy()
+
+        apply_button = ttk.Button(settings_window, text="Применить", command=apply_settings)
+        apply_button.pack(pady=10)
+
+    chart_settings = ctk.CTkButton(column_listbox_frame, text='Настроить', command=open_settings_window)
+    chart_settings.pack(side='top', fill='x', padx=5, pady=5)
+
     # Создаем холст для фрейма с прокруткой
     scrollFrame = tk.Canvas(column_listbox_frame)
     scrollFrame.pack_propagate(False)
@@ -446,7 +499,6 @@ def update_chart_panel():
         column_vars.append(var)
         checkbutton.configure(command=update_chart)
     
-    
     # Поле для графика
     chart_frame = ttk.Frame(visual_frame)
     chart_frame.pack(side='right', fill='both', expand=True)
@@ -459,7 +511,7 @@ def update_chart_panel():
 # Функция сохранения диаграммы
 def save_chart():
     save_filepath = filedialog.asksaveasfilename(defaultextension=".png", 
-                                                filetypes=[("PNG files", "*.png")])
+                                                  filetypes=[("PNG files", "*.png")])
     
     if save_filepath:
         fig.savefig(save_filepath)
@@ -497,6 +549,19 @@ print(f'Accuracy: {accuracy}')
 
     # Вставляем базовый код в редактор
     code_editor.insert(tk.INSERT, base_code)
+    apply_syntax_highlighting()
+
+def apply_syntax_highlighting():
+    # Получаем текст из редактора
+    code = code_editor.get("1.0", tk.END)
+    
+    # Применяем подсветку с помощью Pygments
+    formatter = HtmlFormatter(style='colorful')
+    highlighted_code = highlight(code, PythonLexer(), formatter)
+
+    # Очищаем редактор и вставляем подсвеченный текст
+    code_editor.delete("1.0", tk.END)
+    code_editor.insert(tk.END, highlighted_code)
 
 # Функция для загрузки скрипта в текстовый редактор
 def load_code():
@@ -510,6 +575,7 @@ def load_code():
             code = file.read()
             code_editor.delete(1.0, tk.END)  # Очистить текстовый редактор
             code_editor.insert(tk.END, code)  # Загрузить код в редактор
+            apply_syntax_highlighting()
 
 # Функция для выполнения кода из редактора
 def run_code():
@@ -518,6 +584,7 @@ def run_code():
     if current_file_path:  # Если файл уже сохранен
         with open(current_file_path, 'w', encoding='utf-8') as file:
             file.write(code_editor.get(1.0, tk.END))
+            apply_syntax_highlighting()
 
     else:  # Если файл новый, запрашиваем место для сохранения
         current_file_path = filedialog.asksaveasfilename(defaultextension=".py", filetypes=[("Python files", "*.py")])
@@ -526,6 +593,7 @@ def run_code():
             return
         with open(current_file_path, 'w', encoding='utf-8') as file:
             file.write(code_editor.get(1.0, tk.END))
+            apply_syntax_highlighting()
 
     # Запускаем скрипт через subprocess и выводим результат в консоль
     process = subprocess.Popen(['python', current_file_path], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
